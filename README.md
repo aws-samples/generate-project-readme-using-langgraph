@@ -1,20 +1,20 @@
 # rdmgen
 
-rdmgen is a Python CLI tool to automatically generate high-quality README.md files for code repositories using Amazon Bedrock and LangGraph.
+`rdmgen` is a Python CLI tool to automatically generate high-quality `README.md` files for code repositories using [**Amazon Bedrock**](https://aws.amazon.com/bedrock/) and [**LangGraph**](https://langchain-ai.github.io/langgraph/).
 
 ## Overview 
 
-This project uses the Amazon Bedrock, LangGraph, and LangChain AWS libraries to analyze the structure and contents of a code repository and generate a comprehensive README file. The generated README provides an overview of the project, installation instructions, usage examples, and other relevant details based on the files in the repository.
+This project uses the Amazon Bedrock, LangGraph, and LangChain AWS libraries to analyze the structure and contents of a code repository and generate a comprehensive README.md file. The generated README provides an overview of the project, installation instructions, usage examples, and other relevant details based on the files in the repository.
 
 ## Workflow
 ![Workflow](./imgs/graph_diagram.png)
 
 ## Features
 
-- **Automated README Generation**: No more manually writing README files! rdmgen does the hard work for you.
-- **Local or Remote Repos**: Supports generating READMEs for local repos or public GitHub repositories.
+- **Automated README Generation**: No more manually writing README files! `rdmgen` does the hard work for you.
+- **Local or Remote Repositories**: Supports generating README files for local codebases or remote Git repositories.
 - **Execution Visualization**: Optionally generate a diagram visualizing the LangGraph agent's execution flow.
-- **Customizable Output**: Write the generated README to any directory you specify.
+- **Customizable Output**: Write the generated README.md file to any directory you specify.
 
 ## Installation
 
@@ -30,25 +30,26 @@ pip install .
 
 ### Option 2: Makefile
 
-A Makefile with some recipes is available for linux/MacOS, to create a dedicated python venv and install `rdmgen` in it. Run:
+A Makefile with some recipes is available for linux/MacOS. To create a dedicated Python venv and install `rdmgen` in the virtual environment, run:
 ```
 make all
 ```
 The virtual env is named `.venv` by default, and it's located in the same directory as the repository.
+
 Now run the following command to activate the environment:
 ```
 source .venv/bin/activate
 ```
 
-For more make recipes, run `make help`.
+For more make recipes such as cleaning up and removing the venv, check the output of `make help`.
 
 ## Usage
 
 ### Prerequisites
 
-1. AWS crednetials: before running the cli commands to generate a README, AWS credentials are required. If you are running this from within an AWS environment (e.g. SageMaker Notebook instance), you can proceed to 2 to ensure correct permissions are granted to the attached IAM Role.
+1. **AWS crednetials**: Before running the cli commands to generate a README file, AWS credentials are required. If you are running this from within an AWS environment (e.g. SageMaker Notebook instance), you can proceed to step 2 to ensure correct permissions are granted to the attached IAM Role.
 
-2. IAM Permissions: the IAM User or Role should have at least the following permissions on the selected model (replace the resource * with the model(s)):
+2. **IAM Permissions**: The IAM User or Role should have at least the following permissions on the selected model (replace the resource * with the model(s)):
 ```json
 {
     "Version": "2012-10-17",
@@ -66,20 +67,21 @@ For more make recipes, run `make help`.
 }
 ```
 
-3. Model access in Amazon Bedrock: ensure you have access to the selected model.
+3. **Model access in Amazon Bedrock**: ensure you have access to the selected model via the AWS Console under the Amazon Bedrock Service.
 
 **Note:** The project uses Claude 3 sonnet: `anthropic.claude-3-sonnet-20240229-v1:0` from Amazon Bedrock. Please make sure you have access to it. If you would like to change the model ID, please update it in the `src/rdmgen/constants.py` and re-install the package.
 
 
 ### Commands
-To generate a README for your repository, run the cli command:
+To generate a README.md file for your repository, run the cli command:
 
 ```
 rdmgen <REPO_PATH> --out <OUTPUT_FOLDER>
 ```
-`REPO_PATH` can be a local clone/directory or a remote Git URL.
+- `<REPO_PATH>`: can be a local clone/directory or a remote Git URL.
+- `<OUTPUT_FOLDER>`: path to save the output README.md file to. If not specified, the file is saved to the same directory of the source code.
 
-You can pass the `--diagram` flag to create the flowchart of the agent to see the steps it ran. 
+You can pass the optional `--diagram` flag to create the flowchart of the agent to see the steps it ran. 
 
 
 ### Examples

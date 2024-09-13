@@ -47,9 +47,9 @@ For more make recipes such as cleaning up and removing the venv, check the outpu
 
 ### Prerequisites
 
-1. **AWS crednetials**: Before running the cli commands to generate a README file, AWS credentials are required. If you are running this from within an AWS environment (e.g. SageMaker Notebook instance), you can proceed to step 2 to ensure correct permissions are granted to the attached IAM Role.
+1. **AWS credentials**: Before running the cli commands to generate a README file, AWS credentials are required. If you are running this from within an AWS environment (e.g. SageMaker Notebook instance), you can proceed to step 2 to ensure correct permissions are granted to the attached IAM Role.
 
-2. **IAM Permissions**: The IAM User or Role should have at least the following permissions on the selected model (replace the resource * with the model(s)):
+2. **IAM Permissions**: The IAM User or Role should have at least the following permissions on the selected model (replace the resource * with the model id(s)):
 ```json
 {
     "Version": "2012-10-17",

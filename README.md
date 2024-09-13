@@ -4,7 +4,7 @@ rdmgen is a Python CLI tool to automatically generate high-quality README.md fil
 
 ## Overview 
 
-This project uses the AWS Bedrock, LangGraph, and LangChain AWS libraries to analyze the structure and contents of a code repository and generate a comprehensive README file. The generated README provides an overview of the project, installation instructions, usage examples, and other relevant details based on the files in the repository.
+This project uses the Amazon Bedrock, LangGraph, and LangChain AWS libraries to analyze the structure and contents of a code repository and generate a comprehensive README file. The generated README provides an overview of the project, installation instructions, usage examples, and other relevant details based on the files in the repository.
 
 ## Workflow
 ![Workflow](./imgs/graph_diagram.png)

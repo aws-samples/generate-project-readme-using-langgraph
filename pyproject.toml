@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "rdmgen"
+version = "0.1.2"
+description = "Generate a README.md file for code repository using Amazon Bedrock and LangGraph."
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "rdmgen", from = "src"}]
+
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+langchain = "0.2.15"
+langgraph = "0.2.14"
+langchain-aws = "0.1.17"
+langchain-community = "0.2.15"
+typer = "^0.12.5"
+gitpython = "^3.1.43"
+
+[tool.poetry.group.dev.dependencies]
+# add dependencies for dev here or automatically using poetry add PACKAGE_NAME --dev 
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+rdmgen = "rdmgen.main:app"

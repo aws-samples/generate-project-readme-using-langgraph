@@ -1,0 +1,115 @@
+[
+  {
+      "name": "binary-exec-lib",
+      "level": "warning",
+      "script": "file_extension_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Binary-Exe-Lib",
+      "options": [".jar", ".exe", ".dll", ".pyc", ".class", ".so", ".o", ".a"]
+  },
+  {
+      "name": "binary-archive",
+      "level": "warning",
+      "script": "file_extension_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Binary-Archive",
+      "options": [".zip", ".tar", ".tar.gz", ".7z", ".iso", ".rpm", ".gz", ".rar", ".whl", ".tgz"]
+  },
+  {
+      "name": "binary-document",
+      "level": "warning",
+      "script": "file_extension_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Binary-Document",
+      "options": [".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".odt"]
+  },
+  {
+      "name": "font-file",
+      "level": "warning",
+      "script": "file_extension_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Font-File",
+      "options": [".ttf", ".otf", ".svg", ".eot", ".woff", ".woff2"]
+  },
+  {
+      "name": "third-party-image",
+      "level": "warning",
+      "script": "file_extension_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Third-Party-Image",
+      "options": [".jpg", ".jpeg", ".png", ".gif", ".tiff", ".ico", ".svg"]
+  },
+  {
+      "name": "dataset",
+      "level": "warning",
+      "script": "file_extension_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Dataset",
+      "options": [".csv", ".data", ".tsv"]
+  },
+  {
+      "name": "model",
+      "level": "warning",
+      "script": "file_extension_rule.py",
+      "link": "https://policy.a2z.com/docs/83291/publication",
+      "options": [".pt", ".pth", ".h5", ".model", ".mlmodel", ".mlpackage"]
+  },
+  {
+      "name": "dockerfile",
+      "level": "warning",
+      "script": "file_name_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Dockerfile",
+      "options": ["docker"]
+  },
+  {
+      "name": "dockerfile-download-statement",
+      "level": "warning",
+      "script": "multi_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Dockerfile-Download-Statement/",
+      "options": [
+          ["file_name_rule.py", "file_content_rule.py"],
+          ["docker"],
+          ["from", "wget", "curl", "git clone"]
+      ]
+  },
+  {
+      "name": "third-party-code-links",
+      "level": "warning",
+      "script": "file_content_rule.py",
+      "help": "Watch out for embedded links to third party code.",
+      "options": [
+          "Taken.*github.com",
+          "Attributed.*github.com",
+          "Copied.*github.com"
+      ]
+  },
+  {
+      "name": "third-party-license-file",
+      "level": "warning",
+      "script": "file_path_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Third-Party-License-File/",
+      "options": [
+          "/LICENSE",
+          "/COPYING",
+          "/COPYRIGHT",
+          "/GPL",
+          "/THANK",
+          "/PATENT"
+      ]
+  },
+  {
+      "name": "hidden-or-generated-file",
+      "level": "warning",
+      "script": "file_path_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Hidden-Generated-File",
+      "options": [
+          "/.",
+          "/.*generated",
+          "/.*pycache",
+          "/.*target",
+          "/out",
+          "/dist"
+      ]
+  },
+  {
+      "name": "large-file",
+      "level": "warning",
+      "script": "file_size_rule.py",
+      "link": "https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Large-File",
+      "options": ["500000"]
+  }
+]

@@ -55,7 +55,7 @@ For more make recipes such as cleaning up and removing the venv, check the outpu
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "",
+            "Sid": "VisualEditor",
             "Effect": "Allow",
             "Action": [
                 "bedrock:InvokeModel",

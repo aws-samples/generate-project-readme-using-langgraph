@@ -86,7 +86,8 @@ You can pass the optional `--diagram` flag to create the flowchart of the agent 
 
 ### Examples
 
-Two examples are availabe in this repository for testing:
+The following two examples are availabe in this repository for testing:
+
 ```
 rdmgen test_data/hello_world
 ```

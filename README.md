@@ -124,6 +124,12 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 
 Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or bug fixes.
 
+#### Potential Improvements:
+
+- Add a Tool to decide which files to read, i.e. make it optional to read the un-important files. 
+- Read the files iteratively for each README section. i.e. Firstly create a README template, then further loop through each section and read only the files that might contribute content to that particular section. Perhaps a pattern like: https://langchain-ai.github.io/langgraph/tutorials/plan-and-execute/plan-and-execute/
+
+
 ## License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
